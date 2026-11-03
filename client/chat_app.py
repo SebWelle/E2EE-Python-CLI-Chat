@@ -28,6 +28,13 @@ partner_public_key = PublicKey(hex_partner_key)
 
 box = Box(key_pair[0], partner_public_key)
 
+#safety number
+my_public_hex = key_pair[1].encode().hex()
+
+print(f"\n--- Security-Check ---")
+print(f"Ask {partner}, if his code is also '{hex_string[:8]}'.")
+print(f"Your own code is: '{my_public_hex[:8]}'")
+
 #message exchange
 
 async def send_messages(websocket):
